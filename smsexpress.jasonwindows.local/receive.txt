@@ -1,0 +1,1 @@
+receiveSMS script is in /usr/local/bin

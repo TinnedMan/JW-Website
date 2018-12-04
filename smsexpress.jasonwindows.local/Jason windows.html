@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- /bootstrap config -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <!-- /old scripts -->
+    <body onload="UpdateMessageList()">
+  <script src="lib/SendSMS.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/jquery.csv.js"></script>
+  <script src="lib/JWSMS2.js"></script>
+
+    <title>Jason windows sms</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./bootstrap/css/narrow-jumbotron.css" rel="stylesheet">
+  </head>
+<!-- /main portion -->
+  <body>
+
+    <div class="container">
+      <header class="header clearfix">
+      <img src="./img/jwlogo.png" alt="..." class="img-thumbnail">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="https://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/#">Sent Items</a>
+            </li>
+            
+          </ul>
+        </nav>
+        <h3 class="text-muted">Jason Windows SMS</h3>
+      </header>
+
+      <main role="main">
+
+<!-- /old check if the user can access the SMS list -->
+<?PHP
+  include "conf/LDAPFunctions.php";
+  set_time_limit(5);
+
+  $user = GetUserIfInGroup($_SERVER['REMOTE_USER'], "CN=SMS Users,OU=Security,OU=Groups,OU=Accounts,DC=jasonwindows,DC=local");
+
+  if (!$user) { 
+    print("<div id='PermWarn'>");
+    print("User " . $_SERVER['REMOTE_USER'] . " was not found in the SMS Users group.");
+    print("<h2>You will not be able to send messages.</h2>");
+    print("Please log an ICT request if you require this functionality.<br />");
+    print("</div>");
+  }
+?>
+        <div class="jumbotron">
+          <h1 class="display-6">My messages</h1>
+          <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-lg btn-success" href="https://getbootstrap.com/docs/4.0/examples/narrow-jumbotron/#" role="button">Send a message</a></p>
+        <textarea></textarea>
+        </div>
+
+        
+
+      </main>
+
+      <footer class="footer">
+        <p>© Jason Windows 2018</p> <p>Hello </p>
+      </footer>
+
+    </div> <!-- /container -->
+  
+
+</body></html>

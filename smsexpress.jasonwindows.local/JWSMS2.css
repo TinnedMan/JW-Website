@@ -1,0 +1,101 @@
+body {
+  font-family:arial, sans-serif; 
+  margin:0px;
+  background:#959595;
+}
+
+div#title { 
+  width:100%;
+  font-size:26px;
+  color: #EE3B34;
+  background: #2E373b;
+}
+
+div#PermWarn {
+  text-align: center;
+  color: #CC2222;
+}
+
+div#PermWarn h2 {
+  margin:0px;
+  font-weight: bold;
+}
+
+div#Warnings {
+  font-weight: bold;
+  color: #CC2222;
+}
+
+table#messageList { border:0px }
+table#messageList th { text-align: left; }
+table#messageList td { border:1px solid black; max-width:800px }
+table#messageList td.ModifiedMsg { background: #EEEE00; }
+table#messageList td img { vertical-align: bottom }
+
+div#MainPanel { display: inline-block; }
+
+div#ListActions { text-align:right; }
+
+div#ListActions label[for="EnterMsg"] { float: left; }
+
+label.InputLabel input[type="file"] { display:none; }
+label.InputLabel button { display:none; }
+label.InputLabel {
+  border: 2px solid #AAA;
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin: 2px;
+  background: #DDD;
+  display: inline-block;
+}
+
+label.InputLabel:hover {
+  background: #2E373b;
+}
+label.InputLabel:active {
+  background: #2E373b;
+}
+label.InputLabel span {
+  color: #EE3B34;
+}
+
+span#MessagesReady {
+  display: none; 
+}
+
+div#DirectEntryFields {
+  display:none;
+  margin:20px;
+}
+
+div#DirectEntryFields textarea {
+  padding: 0px;
+  overflow: hidden;
+  display: block;
+  font-family: monospace;
+  width: 450px;
+  resize: none;
+  background:#CCCCCC;
+}
+
+
+div#DirectEntryFields ::-webkit-input-placeholder {
+  color:#666666;
+}
+
+div#DirectEntryFields :-ms-input-placeholder {
+  color:#666666;
+}
+
+.tooltip {
+  display:none;
+  position:absolute;
+  border:1px solid #333;
+  background-color:#161616;
+  border-radius:5px;
+  padding:10px;
+  color:#fff;
+  font-size:14px;
+  font-family:monospace;
+  max-width:400px;    
+}
